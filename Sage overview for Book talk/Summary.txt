@@ -1,0 +1,7 @@
+I covered the tool Sage Math which was mentioned as a useful tool in the book we are reading:
+	Ideals, Varieties, and Algorithms.
+
+I showed how to use the sage via it's console and the jupyter notebook. Then moved on to
+CoCalc as a better alternative, explained all of its uses, why it is better, and showed
+some examples of using sage math to do calculations and as a means of defining mathematic
+functions in python.
