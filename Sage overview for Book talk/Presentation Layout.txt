@@ -1,0 +1,65 @@
+Reasons we are going over sage:
+-Out of all the programming tools/languages the book mentions to use alongside it, Sage is by far the simplest in terms of syntax and initial set up. 
+	-The syntax is akin to python, which it is build off of.
+	-And it can ‘in concept’ be used in normal python programs for computation, though at present it appears it is only really compatible in this sense with the version of python 2.6 that comes shipped with Sage.
+
+What is Sage?:
+-Sage is a free, open source computer algebra system that has been in a state of continual development since it released in 2005.
+
+-It is intended to be comparable in power and scope to commercial packages such as Maple and Mathematica
+
+-Can be thought of specializing in Computational algebra and number theory
+
+Now then, with that out of the way let's go ahead and move on to the actual program.
+
+-It comes with its own browser-based notebook interface which allows us to make documents that are easy to interact with.
+
+-It’s command structure is the same as python, but with some additions.
+
+-Be sure to cover how the different file structures are important here. Workbooks are not the same as sage files, I.E. they can’t be loaded and ran as Sage files can be from notebooks
+
+Examples: Simple hello world in a jupyter notebook (how to run via the browser based notebook)
+	-Make a file directory, & in it make a workbook and do a basic hello world
+-Talk a bit about the Jupyter Notebook, then move on to the console version for quick and dirty work
+Sage Console:
+	-Open it
+	-Write out some basic hello world stuff
+-Show how in Sage, unlike python, functions can be written out via f(x) in place of defining a dedicated function. Do the Groebner’s Basis Example in here.
+
+Groebner Basis example:
+-In order to work with Grobner basis computations in sage, first we define a polynomial ring that contain all polynomials involved and that specifies the monomial order to be used.
+
+-I.E., we want to compute a Groebner basis for the ideal I = (REFERENCE WRITTEN NOTES) with respect to the lex order with x > y.
+
+	-First we define the Ring in Sage: R.<x,y> = PolynomialRing(QQ, order='lex')
+		-QQ is Sage’s built in field of rational numbers
+	-Then we define the Ideal I as such:  I = Ideal(x^2 + y, 2*x*y + y^2)
+		-Now the ideal has been computed via sage.
+	-In order to show the groebner basis, we simply call it as a function of the object I
+		-I.groebner_basis()  (show shift+tab functionality here?)
+	-See paper notes for next steps.
+	
+Suppose we wanted to work w/ polynomials in variables x, y with coefficients in the field Q(sqrt(2)). This is how we would construct the field:
+	Defining the variable in the polynomial  used in the definition of the number field:
+	R.<z> = PolynomialRing(QQ)
+F.<rt2> = NumberField(z^2 -2)
+R.<x, y> = PolynomialRing(F)
+
+Now we’re all set to define ideals in the ring R and compute it’s Grobner bases.
+
+
+-Move to Cocalc
+-Give a brief explanation of how cocalc is structured, and how similar it is to the jupyter notebook, only more convenient for writing in Sage.
+
+-Since it is better for writing sage, I chose cocalc to demonstrate some of the ways that sage varies from python, and how it is functionally converted to python when running predefined sage files from another notebook or sage file.
+
+	-Go over how sage files are run by other sage files/workbooks. 
+		-difference between load and attach
+
+IF STILL HAVE TIME:
+-General Monomial orders can be specified in SAGE. So far we have specified lex orders in the earlier Groebner’s basis examples.
+
+-Run examples in CoCalc, download sage files made in Cocalc, run then in Sage on desktop.
+		
+
+                                                                                                                                                          
